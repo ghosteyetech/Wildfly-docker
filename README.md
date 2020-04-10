@@ -1,11 +1,11 @@
 # Wildfly-docker
 
->Orginal Tutorial Link:
+>Original Tutorial Link:
 http://www.mastertheboss.com/soa-cloud/docker/getting-started-with-docker-and-wildfly
 
 http://www.mastertheboss.com/soa-cloud/docker/deploying-applications-on-your-docker-wildfly-image
 
->Note: Following read me created by using above links for my personal guidance. Big thanks for mastertheboss 
+>Note: Following read me created by using above links for my personal guidance. Big thanks for mastertheboss
 
 >Pulling Docker images
 ```
@@ -22,7 +22,7 @@ http://www.mastertheboss.com/soa-cloud/docker/deploying-applications-on-your-doc
     $ sudo docker run -it jboss/wildfly
 ```
 
->Seems the server started correclty. We can check it by issuing the docker ps command which retrieves the images process which are running and the ports engaged by the process:
+>Seems the server started correctly. We can check it by issuing the docker ps command which retrieves the images process which are running and the ports engaged by the process:
 ```
   $ sudo docker ps
 ```
@@ -41,7 +41,7 @@ http://www.mastertheboss.com/soa-cloud/docker/deploying-applications-on-your-doc
 ## Creating docker file
 >Dockerfile? a Dockerfile has a special mission: automation of Docker image creation. Once, you write build instructions into Dockerfile, you can build your own Docker images with custom environment configuration.
 
->Now make sure that the helloworld.war application is in the same folder as the Dockerfile
+>Now make sure that the WNSassWebPortal.war application is in the same folder as the Dockerfile
 
 >To build a new Docker image is pretty simple, you have to choose a name (actually a tag) and issue a docker build command:
 
@@ -122,7 +122,7 @@ password: Admin#70365
 
 ## Further customization of the Docker file
 
->So far we have learnt about the RUN command to execute the add-user.sh script. We will learn another command which is CMD. The main purpose of a CMD is to provide defaults for an executing container.
+>So far we have learned about the RUN command to execute the add-user.sh script. We will learn another command which is CMD. The main purpose of a CMD is to provide defaults for an executing container.
 
 ```
 CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0"]
