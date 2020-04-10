@@ -3,6 +3,8 @@
 >Orginal Tutorial Link:
 http://www.mastertheboss.com/soa-cloud/docker/getting-started-with-docker-and-wildfly
 
+http://www.mastertheboss.com/soa-cloud/docker/deploying-applications-on-your-docker-wildfly-image
+
 >Pulling Docker images
 ```
     $ sudo docker pull jboss/wildfly
@@ -33,3 +35,6 @@ http://www.mastertheboss.com/soa-cloud/docker/getting-started-with-docker-and-wi
 ```
   $ sudo docker inspect -f '{{ .NetworkSettings.IPAddress }}' 932e2756200e
 ```
+
+## Creating docker file
+>Dockerfile? a Dockerfile has a special mission: automation of Docker image creation. Once, you write build instructions into Dockerfile, you can build your own Docker images with custom environment configuration.
