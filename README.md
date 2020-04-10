@@ -5,6 +5,8 @@ http://www.mastertheboss.com/soa-cloud/docker/getting-started-with-docker-and-wi
 
 http://www.mastertheboss.com/soa-cloud/docker/deploying-applications-on-your-docker-wildfly-image
 
+>Note: Following read me created by using above links for my personal guidance. Big thanks for mastertheboss 
+
 >Pulling Docker images
 ```
     $ sudo docker pull jboss/wildfly
