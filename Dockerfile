@@ -1,3 +1,3 @@
 FROM jboss/wildfly
 
-ADD helloworld.war /opt/jboss/wildfly/standalone/deployments/
+ADD WNSassWebPortal.war /opt/jboss/wildfly/standalone/deployments/

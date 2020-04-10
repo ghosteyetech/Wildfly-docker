@@ -38,3 +38,40 @@ http://www.mastertheboss.com/soa-cloud/docker/deploying-applications-on-your-doc
 
 ## Creating docker file
 >Dockerfile? a Dockerfile has a special mission: automation of Docker image creation. Once, you write build instructions into Dockerfile, you can build your own Docker images with custom environment configuration.
+
+>Now make sure that the helloworld.war application is in the same folder as the Dockerfile
+
+>To build a new Docker image is pretty simple, you have to choose a name (actually a tag) and issue a docker build command:
+
+```
+  $ sudo docker build --tag=wildfly-wn-saas-web .
+```
+
+>So we have successfully built the wildfly-wn-saas-web image. Let's check it by issuing a docker images command:
+```
+  $ sudo docker images
+```
+
+>So now you can start Docker with just:
+```
+  $ sudo docker run -it wildfly-wn-saas-web
+```
+
+>The application server will start. Verify that the console that the application has been started:
+
+![docker container id](images/screen2.png)
+
+>Fine, in order to test it, we need to find the IP address which has been chosen by Docker to bind the application server:
+```
+  $ sudo docker ps
+```
+
+![docker container id](images/screen3.png)
+
+>And then:
+```
+  $ sudo docker inspect -f '{{ .NetworkSettings.IPAddress }}' 1bcb334a6989
+```
+
+>Application is ready to be tested at the address
+  http://172.17.0.2:8080/WNSassWebPortal
