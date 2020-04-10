@@ -74,4 +74,6 @@ http://www.mastertheboss.com/soa-cloud/docker/deploying-applications-on-your-doc
 ```
 
 >Application is ready to be tested at the address
+```
   http://172.17.0.2:8080/WNSassWebPortal
+```
