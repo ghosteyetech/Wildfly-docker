@@ -7,6 +7,11 @@ http://www.mastertheboss.com/soa-cloud/docker/deploying-applications-on-your-doc
 
 >Note: Following read me created by using above links for my personal guidance. Big thanks for mastertheboss
 
+>Adding docker as a user (So no longer needed for use sudo)
+```
+  $ sudo usermod -aG docker $USER
+```
+
 >Pulling Docker images
 ```
     $ sudo docker pull jboss/wildfly
