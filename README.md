@@ -160,7 +160,7 @@ CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0", "-bmanagement", "0
 
 > Push to docker hub
 ```
-  $
+  $ docker push sameerat8/wildfly-wn-saas-web:1.0
 ```
 
 ## WildFlyAppWithHealthCheck.war
