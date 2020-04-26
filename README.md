@@ -54,6 +54,11 @@ http://www.mastertheboss.com/soa-cloud/docker/deploying-applications-on-your-doc
   $ sudo docker build --tag=wildfly-wn-saas-web .
 ```
 
+>Could specify a tag for maintain versions. it will create seperate docker images
+```
+  $ sudo docker build --tag=wildfly-wn-saas-web:1.0 .
+```
+
 >So we have successfully built the wildfly-wn-saas-web image. Let's check it by issuing a docker images command:
 ```
   $ sudo docker images
