@@ -51,12 +51,12 @@ http://www.mastertheboss.com/soa-cloud/docker/deploying-applications-on-your-doc
 >To build a new Docker image is pretty simple, you have to choose a name (actually a tag) and issue a docker build command:
 
 ```
-  $ sudo docker build --tag=wildfly-wn-saas-web .
+  $ sudo docker build --tag=sameerat8/wildfly-wn-saas-web .
 ```
 
 >Could specify a tag for maintain versions. it will create seperate docker images
 ```
-  $ sudo docker build --tag=wildfly-wn-saas-web:1.0 .
+  $ sudo docker build --tag=sameerat8/wildfly-wn-saas-web:1.0 .
 ```
 
 >So we have successfully built the wildfly-wn-saas-web image. Let's check it by issuing a docker images command:
@@ -66,7 +66,7 @@ http://www.mastertheboss.com/soa-cloud/docker/deploying-applications-on-your-doc
 
 >So now you can start Docker with just:
 ```
-  $ sudo docker run -it wildfly-wn-saas-web
+  $ sudo docker run -it sameerat8/wildfly-wn-saas-web:1.0
 ```
 
 >The application server will start. Verify that the console that the application has been started:
@@ -102,12 +102,12 @@ RUN /opt/jboss/wildfly/bin/add-user.sh admin Admin#70365 --silent
 
 >Now let's rebuild our image:
 ```
-  $ sudo docker build --tag=wildfly-wn-saas-web .
+  $ sudo docker build --tag=sameerat8/wildfly-wn-saas-web .
 ```
 
 >We will start now the application server. Since we need to access the management interfaces from our host machine, we need to bind them as well on the 0.0.0.0 IP (all available IP Addresses).
 ```
-  $ sudo docker run -it wildfly-wn-saas-web /opt/jboss/wildfly/bin/standalone.sh -b 0.0.0.0 -bmanagement=0.0.0.0
+  $ sudo docker run -it sameerat8/wildfly-wn-saas-web /opt/jboss/wildfly/bin/standalone.sh -b 0.0.0.0 -bmanagement=0.0.0.0
 ```
 
 >Fine. Inspect for the Container ID using docker ps and find the IP Address used by the application server
@@ -154,6 +154,17 @@ CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0", "-bmanagement", "0
 
 >Once you have rebuilt your image, you can start your docker image with just:
 ```
-  $ sudo docker build --tag=wildfly-wn-saas-web .
-  $ sudo docker run -it wildfly-wn-saas-web
+  $ sudo docker build --tag=sameerat8/wildfly-wn-saas-web .
+  $ sudo docker run -it sameerat8/wildfly-wn-saas-web
+```
+
+> Push to docker hub
+```
+  $ docker push sameerat8/wildfly-wn-saas-web:1.0
+```
+
+## WildFlyAppWithHealthCheck.war
+WildFlyAppWithHealthCheck.war contains health check url that returns 200 when calling
+```
+  http://172.17.0.2:8080/WildFlyAppWithHealthCheck/healthcheck
 ```
